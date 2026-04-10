@@ -78,10 +78,10 @@ El sistema cuenta con 4 tablas principales:
 | COBRO | Registro de cada pago diario realizado |
 
 ### Diagrama Entidad-Relacion (DER)
-![Diagrama Entidad Relacion](recursos/Diagrama_Entidad_Relacion.png)
+![Diagrama Entidad Relacion](https://github.com/ojitoslanda/testing/blob/master/img/javaweb/Diagrama_Entidad_Relacion.png)
  
 ### Modelo Relacional (MR)
-![Modelo Relacional](recursos/Modelo_Relacional.png)
+![Modelo Relacional](https://github.com/ojitoslanda/testing/blob/master/img/javaweb/Modelo_Relacional.png)
 
 ### Cardinalidades
 COBRADOR — PRESTAMO (1:N) <br>
