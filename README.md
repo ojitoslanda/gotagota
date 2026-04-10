@@ -1,3 +1,8 @@
+## TRELLO
+Más info en [mi tablero de trello](https://trello.com/b/4lC3J8oT/java-proyecto-senati)
+![TRELLO](https://github.com/ojitoslanda/testing/blob/master/img/javaweb/Trello.png)
+
+---
 # Sistema de Préstamos Gota a Gota
 Sistema web para la gestión de préstamos a crédito con facilidades de pago diario, semanal y mensual. Desarrollado como proyecto final del curso de Java Web en SENATI.
 
@@ -65,6 +70,9 @@ JavaWeb-GotaGota/
 ```
  
 ---
+
+### DIAGRAMA DE FIGMA UI/UX
+![FIGMA](https://www.figma.com/design/BXoCcKRR9FjiXnO5TxFhuK/Proyecto-Senati?node-id=1-7&t=OXx4vC4zMc8uVobf-1)
 
 ## Base de datos
  
@@ -205,11 +213,4 @@ server.port=8080
 
 ```
  
----
 
-
-```
-### DIAGRAMA DE FIGMA
-<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/design/BXoCcKRR9FjiXnO5TxFhuK/Proyecto-Senati?node-id=1-7&embed-host=share" allowfullscreen></iframe>
-
- <iframe width="560" height="315" src="https://www.youtube.com/embed/fxKnmW0QxHQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
