@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(data => {
             // DOM -> <tbody id="table-cliente">
             const elemento = document.getElementById("table-cliente")
-
             for (let i = 0; i < data.length; i++) {
                 //data[i], muestra en forma de array
                 let cliente = data[i]
@@ -20,10 +19,9 @@ document.addEventListener("DOMContentLoaded", () => {
                             <td>${cliente.direccion}</td>
                             </tr>                
                            `
-                console.log(cliente)
+                elemento.innerHTML += fila  
+                      
+                //console.log(cliente) //Muestro los resultados en consola
             }
         })
-
-
-
 });
