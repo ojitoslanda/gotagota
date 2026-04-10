@@ -18,6 +18,48 @@ Tu backend (Spring Boot)  →  expone una API con URLs (endpoints)
 Tu frontend (HTML/JS)     →  consume esa API con fetch()
 ```
 
+
+
+
+## Por que Spring Boot devuelve datos en JSON
+ 
+Spring Boot devuelve datos en JSON porque es el formato universal que entienden todos los navegadores y todos los lenguajes de programacion.
+ 
+Spring Boot esta hecho en Java y el navegador habla JavaScript. Son dos mundos diferentes que no se entienden directamente. El JSON es el idioma comun entre los dos:
+ 
+```
+Java (Spring Boot)  →  JSON  →  JavaScript (navegador)
+```
+ 
+### Ejemplo
+ 
+Spring Boot tiene un objeto Java asi:
+ 
+```java
+Cliente cliente = new Cliente();
+cliente.setNombre("Juan");
+cliente.setDni("12345678");
+```
+ 
+El navegador no entiende objetos Java, pero si entiende JSON:
+ 
+```json
+{
+  "nombre": "Juan",
+  "dni": "12345678"
+}
+```
+ 
+### Quien hace la conversion
+ 
+Spring Boot lo hace automatico gracias a una libreria incluida llamada Jackson. No necesitas hacer nada extra, solo poner @RestController en el Controller y Spring Boot convierte todo a JSON automaticamente.
+ 
+### Resumido
+ 
+JSON es un lenguaje neutral que tanto Java como JavaScript entienden. Spring Boot lo usa porque el frontend esta hecho en JS y necesitan comunicarse.
+
+
+
 ---
 
 ## Estructura del Proyecto
