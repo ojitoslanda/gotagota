@@ -1,5 +1,7 @@
 // EVENTOS EN JAVASCRIPT (CLICK, CARGAR, KEY,)
+
 document.addEventListener("DOMContentLoaded", () => {
+
   fetch("http://localhost:8080/api/clientes")
     .then((response) => response.json())
     .then((data) => {
@@ -21,15 +23,34 @@ document.addEventListener("DOMContentLoaded", () => {
                                 <button class="btn btn-outline-primary me-2">
                                     <i class="fas fa-edit"></i> Editar
                                 </button>
-                                <button class="btn btn-outline-danger">
+                                <button id="btnEliminar" data-idcliente = ${cliente.id} class="btn btn-outline-danger">
                                     <i class="fas fa-trash"></i> Eliminar
                                 </button>
                             </td>
                             </tr>                
                            `;
         elemento.innerHTML += fila;
-
-        //console.log(cliente) //Muestro los resultados en consola
       }
     });
+
+});
+
+// EVENTO DE CLICK EN JAVASCRIPT
+//Creamos una variable que almacene el DOM de ese elemento del boton
+document.addEventListener("click", function (e) {
+  const btnDelete = e.target.closest("#btnEliminar");
+  if (btnDelete) { //TRUE o 1
+    alert("Eliminando...");
+
+    fetch(`http://localhost:8080/api/clientes/${id}`, {
+      method: 'DELETE'
+    })
+    .then(response => {
+        if (response.ok) {
+          alert('Cliente eliminado correctamente');
+          location.reload(); // Recargar la página para reflejar los cambios
+        } else {
+          alert('Error al eliminar el cliente');
+     }})
+  }
 });
