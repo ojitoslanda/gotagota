@@ -31,7 +31,5 @@ public class ClienteController {
         clienteService.eliminarCliente(id);
         return ResponseEntity.noContent().build();
     }
-
-
 }
 
