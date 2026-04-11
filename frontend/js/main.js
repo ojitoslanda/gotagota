@@ -43,7 +43,8 @@ document.addEventListener("click", function (e) {
         alert("Eliminando...");
         const id = btnDelete.dataset.idcliente;
         //console.log(id) para en consola que ID es nada mas
-        fetch('http://localhost:8080/api/clientes/${id}', {
+       // fetch(`http://localhost:8080/api/clientes/${id}`, {
+        fetch("http://localhost:8080/api/clientes/"+id, {
           method: 'DELETE'
         })
         .then(response => {
