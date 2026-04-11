@@ -40,17 +40,18 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("click", function (e) {
   const btnDelete = e.target.closest("#btnEliminar");
   if (btnDelete) { //TRUE o 1
-    alert("Eliminando...");
-
-    fetch(`http://localhost:8080/api/clientes/${id}`, {
-      method: 'DELETE'
-    })
-    .then(response => {
-        if (response.ok) {
-          alert('Cliente eliminado correctamente');
-          location.reload(); // Recargar la página para reflejar los cambios
-        } else {
-          alert('Error al eliminar el cliente');
-     }})
+      alert("Eliminando...");
+      const id = btnDelete.dataset.idcliente;
+      console.log(id)
+      fetch(`http://localhost:8080/api/clientes/${id}`, {
+        method: 'DELETE'
+      })
+      .then(response => {
+          if (response.ok) {
+            alert('Cliente eliminado correctamente');
+            location.reload(); // Recargar la página para reflejar los cambios
+          } else {
+            alert('Error al eliminar el cliente');
+      }})
   }
 });
