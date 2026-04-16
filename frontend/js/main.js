@@ -1,7 +1,5 @@
 // EVENTOS EN JAVASCRIPT (CLICK, CARGAR, KEY,)
-
 document.addEventListener("DOMContentLoaded", () => {
-
   fetch("http://localhost:8080/api/clientes")
     .then((response) => response.json())
     .then((data) => {
@@ -20,7 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
                             <td>${cliente.telefono}</td>
                             <td>${cliente.direccion}</td>
                             <td> 
-                                <button class="btn btn-outline-primary me-2">
+                                <button
+                                     
+                                    class="btn btn-outline-primary me-2">
                                     <i class="fas fa-edit"></i> Editar
                                 </button>
                                 <button id="btnEliminar" data-idcliente = ${cliente.id} class="btn btn-outline-danger">
