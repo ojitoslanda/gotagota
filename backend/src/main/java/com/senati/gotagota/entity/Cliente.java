@@ -27,6 +27,8 @@ public class Cliente {
 
     //GETTER a SETTERS
 
+    //GET & SET
+
     public Long getId() {
         return id;
     }
