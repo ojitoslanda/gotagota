@@ -14,15 +14,22 @@ public class ClienteService {
     public ClienteService(ClienteRepository clienteRepository) {
         this.clienteRepository = clienteRepository;
     }
+
     //Retorna o recibe la lista de todos los clientes
     public List<Cliente> listarTodos(){
         return clienteRepository.findAll();
     }
 
+    // Crear un cliente        //nombre de la clase
+    public Cliente crearCliente(Cliente cliente){
+        return clienteRepository.save(cliente);
+    }
     //Elimina el cliente por ID
     public void eliminarCliente(Long id) {
         clienteRepository.deleteById(id);
     };
+
+
 }
 
 
