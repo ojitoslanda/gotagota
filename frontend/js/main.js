@@ -31,6 +31,10 @@ document.addEventListener("DOMContentLoaded", () => {
         elemento.innerHTML += fila;
       }
     });
+
+    // DOM (document object model) Dar accion al boton de guardar cliente
+    const btnSaveCliente = document.getElementById("btn-crearcliente")
+    btnSaveCliente.addEventListener("click", guardarCliente);
 });
 
 // EVENTO DE CLICK EN JAVASCRIPT
@@ -68,6 +72,6 @@ function guardarCliente() {
       headers: {"Content-Type":"application/json"},
       body: JSON.stringify({nombre,apellido,dni,telefono,direccion}) 
     }).then((response) => {
-        console.log(response)
+        console.log(response) //mensaje en la consola (200 o OK)
     });
 }
