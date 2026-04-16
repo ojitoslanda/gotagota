@@ -62,16 +62,22 @@ document.addEventListener("click", function (e) {
 
 // CREAMOS UN FUNCION BASICA
 function guardarCliente() {
-  const nombre = document.getElementById("c_nombre");
-  const apellido = document.getElementById("c_apellido");
-  const dni = document.getElementById("c_dni");
-  const telefono = document.getElementById("c_telefono");
-  const direccion = document.getElementById("c_direccion");
+  const nombre = document.getElementById("c_nombre").value;
+  const apellido = document.getElementById("c_apellido").value;
+  const dni = document.getElementById("c_dni").value;
+  const telefono = document.getElementById("c_telefono").value;
+  const direccion = document.getElementById("c_direccion").value;
+  console.log(nombre,apellido,dni,telefono,direccion)
     fetch("http://localhost:8080/api/clientes", {
       method: "POST",
       headers: {"Content-Type":"application/json"},
       body: JSON.stringify({nombre,apellido,dni,telefono,direccion}) 
     }).then((response) => {
         console.log(response) //mensaje en la consola (200 o OK)
+        if(response.ok){
+          location.reload()
+        }else{
+          alert("Error: no se pudo guardar")
+        }
     });
 }
