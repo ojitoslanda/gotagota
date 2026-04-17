@@ -42,9 +42,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // DOM (document object model) Dar accion al boton de guardar cliente
-    const btnSaveCliente = document.getElementById("btn-crearcliente")
-    btnSaveCliente.addEventListener("click", guardarCliente);
+  // DOM (document object model) Dar accion al boton de guardar cliente
+  const btnSaveCliente = document.getElementById("btn-crearcliente");
+  btnSaveCliente.addEventListener("click", guardarCliente);
 });
 
 // EVENTO DE CLICK EN JAVASCRIPT
@@ -77,22 +77,33 @@ function guardarCliente() {
   const dni = document.getElementById("c_dni").value;
   const telefono = document.getElementById("c_telefono").value;
   const direccion = document.getElementById("c_direccion").value;
-  console.log(nombre,apellido,dni,telefono,direccion)
-    fetch("http://localhost:8080/api/clientes", {
-      method: "POST",
-      headers: {"Content-Type":"application/json"},
-      body: JSON.stringify({nombre,apellido,dni,telefono,direccion}) 
-    }).then((response) => {
-        console.log(response) //mensaje en la consola (200 o OK)
-        if(response.ok){
-          location.reload()
-        }else{
-          alert("Error: no se pudo guardar")
-        }
-    });
+  console.log(nombre, apellido, dni, telefono, direccion);
+  fetch("http://localhost:8080/api/clientes", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ nombre, apellido, dni, telefono, direccion }),
+  }).then((response) => {
+    console.log(response); //mensaje en la consola (200 o OK)
+    if (response.ok) {
+      location.reload();
+    } else {
+      alert("Error: no se pudo guardar");
+    }
+  });
 }
 
 //funcion para poner los datos en el input del FORMULARIO actualizar
-function llamardatos(){
-   const btnDelete = e.target.closest("#btnEliminar");
+function llamardatos() {
+  const btnEditar = e.target.closest("#btnEditar");
+  const id_cli = btnEditar.dataset.idcli;
+  const nom_cli = btnEditar.dataset.nomcli;
+  const apell_cli = btnEditar.dataset.apellcli;
+  const dni_cli = btnEditar.dataset.dnicli;
+  const telf_cli = btnEditar.dataset.telfcli;
+  const dire_cli = btnEditar.dataset.direcli;
+  document.getElementById("c_u_nombre").value = nom_cli;
+  document.getElementById("c_u_apellido").value = apell_cli;
+  document.getElementById("c_u_dni").value = dni_cli;
+  document.getElementById("c_u_telefono").value = telf_cli;
+  document.getElementById("c_u_direccion").value = dire_cli;
 }
